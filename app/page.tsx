@@ -1,65 +1,153 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import React, { useState, useEffect } from 'react';
+
+// --- Data Structure ---
+const servers = {
+  HippoCraft: {
+    title: "HippoCraft",
+    date: "Sept 2020 - Nov 2020",
+    summary: "HippoCraft was the first FaunaCraft server, launched in September 2020.",
+    images: ["Hippo SS1.png", "Hippo SS2.png", "Hippo SS3.png", "Hippo SS4.png"]
+  },
+  IguanaCraft: {
+    title: "IguanaCraft",
+    date: "Nov 2020 - Apr 2021",
+    summary: "IguanaCraft was the second FaunaCraft server, launched in November 2020.",
+    images: ["Iguana SS1.png", "Iguana SS2.png", "Iguana SS3.png", "Iguana SS4.png"]
+  },
+  JaguarCraft: {
+    title: "JaguarCraft",
+    date: "Dec 2021 - July 2022",
+    summary: "JaguarCraft was the third FaunaCraft server, launched in December 2021.",
+    images: []
+  },
+  KoalaCraft: {
+    title: "KoalaCraft",
+    date: "Oct 2022 - Feb 2023",
+    summary: "KoalaCraft was the fourth FaunaCraft server, launched in October 2022.",
+    images: []
+  },
+  LobsterCraft: {
+    title: "LobsterCraft",
+    date: "June 2023 - Sept 2023",
+    summary: "LobsterCraft was the fifth FaunaCraft server, launched in June 2023.",
+    images: []
+  },
+  MooseCraft: {
+    title: "MooseCraft",
+    date: "Dec 2023 - March 2024",
+    summary: "MooseCraft was the sixth FaunaCraft server, launched in December 2023.",
+    images: []
+  },
+  NarwhalCraft: {
+    title: "NarwhalCraft",
+    date: "June 2024 - Jan 2025",
+    summary: "NarwhalCraft is the seventh FaunaCraft server, launched in June 2024.",
+    images: []
+  },
+  OstrichCraft: {
+    title: "OstrichCraft",
+    date: "COMING SOON!",
+    summary: "OstrichCraft is the upcoming FaunaCraft server, launching soon.",
+    images: []
+  },
+};
+
+export default function FaunaCraftPage() {
+  const [selectedServer, setSelectedServer] = useState<null | keyof typeof servers>(null);
+  const [isSmall, setIsSmall] = useState(false);
+
+  // Handle the "small screen" logic from your script.js
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmall(window.innerWidth < 1150);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const serverData = selectedServer ? servers[selectedServer] : null;
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className=" min-h-screen bg-black text-white font-['Montserrat'] overflow-x-hidden selection:bg-white selection:text-black">
+      {/* Inline Styles for Animations and Fonts */}
+      <style jsx global>{`
+        @font-face {
+          font-family: 'Minecraft Ten';
+          src: url('/fonts/mc-ten-lowercase-alt.ttf') format('truetype');
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+          animation: fadeIn 0.6s ease-out forwards;
+        }
+        .bg-radial-custom {
+          background: radial-gradient(circle, #13171b 0%, rgba(0, 0, 0, 1) 100%);
+        }
+      `}</style>
+
+      <div className="bg-radial-custom min-h-screen w-full grid place-items-center relative top-0">
+        <div className="max-w-[90%] py-[30px] w-full">
+          
+          {/* Icons Row */}
+          <div className="flex items-center gap-0 overflow-hidden">
+            {Object.keys(servers).map((key, index) => (
+              <div
+                key={key}
+                onClick={() => setSelectedServer(key as keyof typeof servers)}
+                className="server-button group flex-1 text-center cursor-pointer overflow-hidden py-[30px] opacity-0 animate-fade-in"
+                style={{ animationDelay: `${index * 100 + 200}ms` }}
+              >
+                <img 
+                  src={`/Icons/${key.replace('Craft', '')}.png`} 
+                  alt={key}
+                  className="block w-full transition-transform duration-300 group-hover:-translate-y-[15px]"
+                />
+                {!isSmall && (
+                  <p className="capitalize opacity-0 overflow-visible translate-y-[10px] transition-all duration-300 text-[1.25rem] font-semibold group-hover:opacity-100 group-hover:translate-y-0">
+                    {key}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Server Viewer */}
+          {serverData && (
+            <div className="mt-4 border border-white/20 p-5 bg-[#13171b] animate-fade-in block">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h1 className="text-4xl font-bold mb-1">{serverData.title}</h1>
+                  <p className="text-white/70">{serverData.date}</p>
+                </div>
+                <button className="border border-white/20 p-5 bg-[#1f262b] cursor-pointer font-semibold hover:bg-[#2a3238] transition-colors">
+                  See More
+                </button>
+              </div>
+              
+              <br />
+              <p>{serverData.summary}</p>
+              <br />
+
+              {/* Screenshots Grid */}
+              <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-0">
+                {serverData.images.map((img, idx) => (
+                  <img 
+                    key={idx} 
+                    src={`/images/${img}`} 
+                    alt="screenshot" 
+                    className="w-full object-cover aspect-video"
+                  />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

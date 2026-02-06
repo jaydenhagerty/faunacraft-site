@@ -1,12 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+
+  /* stuff here maybe */
+
+}
+
+@font-face {
+  font-family: 'Minecraft Ten';
+  src: url('/fonts/mc-ten-lowercase-alt.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply m-0 box-border bg-black text-white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bg-radial-custom {
+  background: radial-gradient(circle, #13171b 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 }
