@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 // --- Data Structure ---
 const servers = {
@@ -48,8 +49,8 @@ const servers = {
   },
   OstrichCraft: {
     title: "OstrichCraft",
-    date: "COMING SOON!",
-    summary: "OstrichCraft is the upcoming FaunaCraft server, launching soon.",
+    date: "Feb 13, 2026",
+    summary: "OstrichCraft is the upcoming FaunaCraft server, launching soon!",
     images: []
   },
 };
@@ -71,7 +72,7 @@ export default function FaunaCraftPage() {
   const serverData = selectedServer ? servers[selectedServer] : null;
 
   return (
-    <main className=" min-h-screen bg-black text-white font-['Montserrat'] overflow-x-hidden selection:bg-white selection:text-black">
+    <main className=" min-h-screen bg-black text-white overflow-x-hidden selection:bg-white selection:text-black">
       {/* Inline Styles for Animations and Fonts */}
       <style jsx global>{`
         @font-face {
@@ -124,9 +125,9 @@ export default function FaunaCraftPage() {
                   <h1 className="text-4xl font-bold mb-1">{serverData.title}</h1>
                   <p className="text-white/70">{serverData.date}</p>
                 </div>
-                <button className="border border-white/20 p-5 bg-[#1f262b] cursor-pointer font-semibold hover:bg-[#2a3238] transition-colors">
+                <Link href={`/${selectedServer?.toLowerCase()}`} className="border border-white/20 p-5 bg-[#1f262b] cursor-pointer font-semibold hover:bg-[#2a3238] transition-colors">
                   See More
-                </button>
+                </Link>
               </div>
               
               <br />
