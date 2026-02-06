@@ -104,7 +104,7 @@ export default function FaunaCraftPage() {
                 style={{ animationDelay: `${index * 100 + 200}ms` }}
               >
                 <img 
-                  src={`/Icons/${key.replace('Craft', '')}.png`} 
+                  src={`/icons/${key.replace('Craft', '')}.png`} 
                   alt={key}
                   className="block w-full transition-transform duration-300 group-hover:-translate-y-[15px]"
                 />
