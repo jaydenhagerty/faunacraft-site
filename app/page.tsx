@@ -50,7 +50,7 @@ const servers = {
   OstrichCraft: {
     title: "OstrichCraft",
     date: "Feb 13, 2026",
-    summary: "OstrichCraft is the upcoming FaunaCraft server, launching soon!",
+    summary: "The latest FaunaCraft server. OstrichCraft is a western-themed SMP with ground-breaking datapacks and custom mechanics.",
     images: []
   },
 };
@@ -91,25 +91,35 @@ export default function FaunaCraftPage() {
         }
       `}</style>
 
+        {/* bg-[#13171b]/80 backdrop-blur-sm border-b border-white/20 */}
+      <nav className="fixed z-50 top-0 left-0 w-full "> 
+        <div className="mx-auto px-16 py-3 flex items-center justify-between">
+          <img src="/images/FAUNACRAFT LOGO transparent.png" alt="FaunaCraft Logo" className="max-h-[40px] animate-fade-in opacity-0" style={{ animationDelay: `1200ms` }}/>
+
+          <div className="flex items-center gap-5">
+            {/* <a className="hover:underline">About</a> */}
+            {/* <a className="hover:underline">Contact</a> */}
+          </div>
+        </div>
+      </nav>
       <div className="bg-radial-custom min-h-screen w-full grid place-items-center relative top-0">
         <div className="max-w-[90%] py-[30px] w-full">
-          
           {/* Icons Row */}
           <div className="flex items-center gap-0 overflow-hidden">
             {Object.keys(servers).map((key, index) => (
               <div
                 key={key}
                 onClick={() => setSelectedServer(key as keyof typeof servers)}
-                className="server-button group flex-1 text-center cursor-pointer overflow-hidden py-[30px] opacity-0 animate-fade-in"
+                className={`server-button group flex-1 text-center cursor-pointer overflow-hidden py-[30px] opacity-0 animate-fade-in`}
                 style={{ animationDelay: `${index * 100 + 200}ms` }}
               >
                 <img 
                   src={`/icons/${key.replace('Craft', '')}.png`} 
                   alt={key}
-                  className="block w-full transition-transform duration-300 group-hover:-translate-y-[15px]"
+                  className={`block w-full transition-transform duration-300 group-hover:-translate-y-[15px]`}
                 />
                 {!isSmall && (
-                  <p className="capitalize opacity-0 overflow-visible translate-y-[10px] transition-all duration-300 text-[1.25rem] font-semibold group-hover:opacity-100 group-hover:translate-y-0">
+                  <p className={`capitalize opacity-0 overflow-visible translate-y-[10px] transition-all duration-300 text-[1.25rem] font-semibold group-hover:opacity-100 group-hover:translate-y-0`}>
                     {key}
                   </p>
                 )}
