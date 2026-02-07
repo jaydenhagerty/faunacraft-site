@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "OstrichCraft Wiki",
+  title: "Guns - OstrichCraft Wiki",
   description: "The central hub for all OstrichCraft info!",
   metadataBase: new URL("https://faunacraft.web.app/"),
   openGraph: {
@@ -17,12 +17,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function OverviewPage() {
+export default function OstrichCraftWikiPage() {
   return (
     <>
-      <h1 className="text-3xl font-bold">Overview</h1>
-      <img src="/images/ostrichcraft banner.png" alt="OstrichCraft Banner" className="my-6 rounded-lg shadow-lg max-h-[400px] w-full object-cover" />
-      <p>OstrichCraft is a highly-anticipated, western-themed Minecraft SMP server in the FaunaCraft series.</p>
+      <h1 className="text-3xl font-bold">Guns</h1>
+      <p>We got guns babyyyyy</p>
     </>
   );
 }
