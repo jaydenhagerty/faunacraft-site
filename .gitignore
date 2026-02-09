@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# some firebase hosting file keeps getting generated and I don't think it needs to be committed`
+*.cache
