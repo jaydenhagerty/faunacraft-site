@@ -29,7 +29,7 @@ export default function OstrichSidenav() {
 
         {/* Sidenav */}
         <nav className={`
-          fixed w-[250px] bg-[#1f262b] border-r border-white/20 py-4 px-2 flex-shrink-0 bottom-0 top-0 z-40
+          font-display fixed w-[250px] bg-[#1f262b] border-r border-white/20 py-4 px-2 flex-shrink-0 bottom-0 top-0 z-40
           transition-transform duration-300 ease-in-out
           md:translate-x-0
           ${isOpen ? 'translate-x-0' : '-translate-x-full'}

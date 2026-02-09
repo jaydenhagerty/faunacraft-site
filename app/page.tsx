@@ -105,7 +105,7 @@ export default function FaunaCraftPage() {
       <div className="bg-radial-custom min-h-screen w-full grid place-items-center relative top-0">
         <div className="max-w-[90%] py-[30px] w-full">
           {/* Icons Row */}
-          <div className="flex items-center gap-0 overflow-hidden">
+          <div className="flex items-center gap-0 overflow-hidden font-display">
             {Object.keys(servers).map((key, index) => (
               <div
                 key={key}
