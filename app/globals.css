@@ -59,3 +59,11 @@ h1, h2, h3 {
 code {
   @apply bg-gray-800 text-green-400 px-1 rounded-sm;
 }
+
+ul {
+  @apply list-disc ml-6 mt-2;
+}
+
+ul > li {
+  @apply mb-2; /* replace space-y-2 */
+}

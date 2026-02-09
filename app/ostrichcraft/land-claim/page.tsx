@@ -44,7 +44,7 @@ export default function OstrichCraftWikiPage() {
 
       <div className="px-8">
         <h3 className="text-xl font-semibold mt-4">Essentials</h3>
-        <ul className="list-disc ml-6 mt-2 space-y-2">
+        <ul>
           <li>
             <code>/lands</code> — Displays the main menu
           </li>
@@ -58,7 +58,7 @@ export default function OstrichCraftWikiPage() {
         </ul>
 
         <h3 className="text-xl font-semibold mt-6">Advanced</h3>
-        <ul className="list-disc ml-6 mt-2 space-y-2">
+        <ul>
           <li>
             <code>/unclaim</code> — Unclaims the chunk you're currently standing in. You may get a partial refund of the Dim you paid for that chunk :)
           </li>
