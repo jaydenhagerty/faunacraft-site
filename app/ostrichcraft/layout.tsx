@@ -10,7 +10,7 @@ export default function OstrichLayout({ children }: { children: ReactNode }) {
       <OstrichSidenav />
 
       {/* Main content */}
-      <main className="flex-1 p-16 bg-[#13171b] text-white md:ml-[250px]">
+      <main className="flex-1 md:p-16 pt-16 p-4 bg-[#13171b] text-white md:ml-[250px]">
         {children}
       </main>
     </div>
