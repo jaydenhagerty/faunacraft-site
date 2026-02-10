@@ -39,6 +39,8 @@ export default function OstrichSidenav() {
             <Link href="/ostrichcraft" className="text-white text-xl font-bold px-2 py-1" onClick={() => setIsOpen(false)}>Overview</Link>
             <Link href="/ostrichcraft/land-claim" className="text-white text-xl font-bold px-2 py-1" onClick={() => setIsOpen(false)}>Land Claiming</Link>
             <Link href="/ostrichcraft/guns" className="text-white text-xl font-bold px-2 py-1" onClick={() => setIsOpen(false)}>Guns</Link>
+            <Link href="/ostrichcraft/currency" className="text-white text-xl font-bold px-2 py-1" onClick={() => setIsOpen(false)}>Currency</Link>
+            <Link href="/ostrichcraft/ostrich-overpass" className="text-white text-xl font-bold px-2 py-1" onClick={() => setIsOpen(false)}>Spawn Town</Link>
           </div>
             <Link href="/" className="text-white/40 text-xl font-bold px-2 py-1 bottom-5 absolute" onClick={() => setIsOpen(false)}>FaunaCraft</Link>
         </nav>
