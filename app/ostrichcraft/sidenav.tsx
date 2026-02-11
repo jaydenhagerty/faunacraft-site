@@ -37,6 +37,7 @@ export default function OstrichSidenav() {
           <img src="/images/ostrichcraft logo transparent.png" alt="OstrichCraft Logo" className="mb-6 md:mt-0 mt-8" />
           <div className="flex flex-col space-y-2">
             <Link href="/ostrichcraft" className="text-white text-xl font-bold px-2 py-1" onClick={() => setIsOpen(false)}>Overview</Link>
+            <Link href="http://ostrichcraft.apexmc.co:8123/?worldname=OstrichCraft%20World&mapname=flat&zoom=3&x=-5345&y=64&z=-5881" target="_blank" className="text-white text-xl font-bold px-2 py-1" onClick={() => setIsOpen(false)}>World Map</Link>
             <Link href="/ostrichcraft/land-claim" className="text-white text-xl font-bold px-2 py-1" onClick={() => setIsOpen(false)}>Land Claiming</Link>
             <Link href="/ostrichcraft/guns" className="text-white text-xl font-bold px-2 py-1" onClick={() => setIsOpen(false)}>Guns</Link>
             <Link href="/ostrichcraft/currency" className="text-white text-xl font-bold px-2 py-1" onClick={() => setIsOpen(false)}>Currency</Link>

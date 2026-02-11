@@ -26,8 +26,9 @@ export default function OstrichCraftWikiPage() {
       <h1 className="text-2xl font-bold mt-4">Exchange Rates</h1>
       <p>1 Diamond = 4 Dim</p>
       <p>(in other words, 1 Dim is worth 1/4 of a Diamond)</p>
-      <br></br>
-      <p>You can convert these items back and forth by visiting the bank located in Ostrich Overpass.</p>
+      <div className="p-4 bg-white/5 mt-6">
+        <p>Convert your diamonds/emeralds into Dim by visiting the bank located in Ostrich Overpass.</p>
+      </div>
     </>
 
   );
