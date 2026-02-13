@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+import Link from "next/link";
+import ColorTable from "../colourtable";
 
 export const metadata: Metadata = {
   title: "Land Claiming - OstrichCraft Wiki",
@@ -21,7 +23,7 @@ export default function OstrichCraftWikiPage() {
   return (
     <>
       <h1 className="text-3xl font-bold">Land Claiming</h1>
-      <p>OstrichCraft marks the debut of a new land claiming system! This page will tell you everything you need to know about it.</p>
+      <p>OstrichCraft marks the debut of a new land claiming system! This page will tell you everything you need to know about it. Building in groups is encouraged (and more financially viable), and as the owner/initiator of a land claim, you should know the following:</p>
       <div className="p-4 bg-white/5 mt-6">
         <h2 className="text-2xl font-bold">Getting Started</h2>
         <p>To make your first land claim, you will need <b>16 Dim</b> in your inventory.</p>
@@ -32,6 +34,20 @@ export default function OstrichCraftWikiPage() {
       <h2 className="text-2xl font-bold mt-6">Land Management</h2>
       <p>Access the central menu by doing <code>/lands</code> (or even <code>/l</code> for short!)</p>
       <p>From here, you can add members, rename your land, and edit a variety of permission settings.</p>
+
+      <details className="mt-4 border border-white/20 rounded-lg p-4">
+        <summary className="cursor-pointer font-semibold text-white/50">More detailed management tips</summary>
+        <div className="px-8">
+          <h2 className="text-xl font-bold mt-6">Invite Your Friends!</h2>
+          <p>Navigate to <code>Land &gt; Player Management &gt; Members</code> to add people.</p>
+          <img src="/images/lands member add ss.png" alt="Land Claiming Screenshot" className="my-3 rounded-lg shadow-lg w-full max-w-[600px] object-cover" />
+
+          <h2 className="text-xl font-bold mt-6">Rename Your land! (& choose its colour)</h2>
+          <p>Navigate to <code>Land &gt; Miscellaneous Settings &gt; Name</code> to rename your land. Choose its colour by adding a <Link className="underline text-blue-400" target="_blank" href="https://minecraft.fandom.com/wiki/Formatting_codes">Minecraft Formatting Code</Link>.</p>
+          <img src="/images/lands rename ss4.png" alt="Land Claiming Screenshot" className="my-3 rounded-lg shadow-lg w-full max-w-[600px] object-cover" />
+          <ColorTable />
+        </div>
+      </details>
 
       <h2 className="text-2xl font-bold mt-6">Claim More Land</h2>
       <p>You can expand your claim into adjacent chunks by standing in one and doing <code>/claim</code>. Each individual chunk will cost <b>4 Dim</b>.</p>
@@ -63,7 +79,13 @@ export default function OstrichCraftWikiPage() {
             <code>/unclaim</code> — Unclaims the chunk you're currently standing in. You may get a partial refund of the Dim you paid for that chunk :)
           </li>
           <li>
-            <code>/lands delete [name]</code> — Deletes the land with the specified name. (Be careful with this one!)
+            <code>/lands edit [land name]</code> — Only relevant to those who are members of more than one land claim. This selects which land all your subsequent actions like /claim are excecuted for.
+          </li>
+          <li>
+            <code>/lands delete [land name]</code> — Deletes the land with the specified name. (Be careful with this one!)
+          </li>
+          <li>
+            <code>/lands setowner [player]</code> — Transfers ownership of the entire land to a new player.
           </li>
         </ul>
       </div>
