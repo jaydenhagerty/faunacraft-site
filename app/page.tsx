@@ -173,7 +173,7 @@ export default function FaunaCraftPage() {
       </section>
       <section className="bg-[#13171b] text-white py-16 px-8 flex justify-center">
         <div className="flex flex-col sm:flex-row gap-8 items-center max-w-[800px] text-center sm:text-left">
-          <img src="/icons/ostrich.png" alt="Ostrich Icon"/>
+          <img src="/icons/Ostrich.png" alt="Ostrich Icon"/>
           <div>
             <h2 className="text-3xl font-bold">OstrichCraft is now live!</h2>
             <p className="text-lg mb-6">Our latest Minecraft server is an epic journey into the wild west.</p>
