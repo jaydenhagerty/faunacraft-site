@@ -94,7 +94,7 @@ export default function FaunaCraftPage() {
         {/* bg-[#13171b]/80 backdrop-blur-sm border-b border-white/20 */}
       <nav className="fixed z-50 top-0 left-0 w-full "> 
         <div className="mx-auto px-16 py-3 flex items-center justify-between">
-          <img src="/images/FAUNACRAFT LOGO transparent.png" alt="FaunaCraft Logo" className="max-h-[40px] animate-fade-in opacity-0" style={{ animationDelay: `1200ms` }}/>
+          {/* <img src="/images/FAUNACRAFT LOGO transparent.png" alt="FaunaCraft Logo" className="max-h-[40px] animate-fade-in opacity-0" style={{ animationDelay: `1200ms` }}/> */}
 
           <div className="flex items-center gap-5">
             {/* <a className="hover:underline">About</a> */}
@@ -103,7 +103,12 @@ export default function FaunaCraftPage() {
         </div>
       </nav>
       <div className="bg-radial-custom min-h-screen w-full grid place-items-center relative top-0">
+        {/* <img src="/images/Hippo SS1.png" alt="HippoCraft Screenshot" className="absolute top-0 left-0 w-full h-full object-cover opacity-10 pointer-events-none"/> */}
         <div className="max-w-[90%] py-[30px] w-full">
+          <div className="flex flex-row animate-fade-in opacity-0 items-center gap-1 font-bold text-2xl justify-center" style={{ animationDelay: `1200ms` }}>
+            <p className='hidden sm:block'>We are</p>
+            <img src="/images/FAUNACRAFT LOGO transparent.png" alt="FaunaCraft Logo" className="max-h-[60px]"/>
+          </div>
           {/* Icons Row */}
           <div className="flex items-center gap-0 overflow-hidden font-display">
             {Object.keys(servers).map((key, index) => (
@@ -130,7 +135,7 @@ export default function FaunaCraftPage() {
           {/* Server Viewer */}
           {serverData && (
             <div className="mt-4 border border-white/20 p-5 bg-[#13171b] animate-fade-in block">
-              <div className="flex justify-between items-start">
+              <div className="flex justify-between items-start gap-4">
                 <div>
                   <h1 className="text-4xl font-bold mb-1">{serverData.title}</h1>
                   <p className="text-white/70">{serverData.date}</p>
@@ -159,6 +164,25 @@ export default function FaunaCraftPage() {
           )}
         </div>
       </div>
+      <section className="bg-[#13171b] text-white py-32 px-8 flex justify-center relative">
+          <img src="/images/Hippo SS1.png" alt="HippoCraft Screenshot" className="absolute w-full h-full object-cover opacity-10 pointer-events-none top-0"/>
+        <div className='max-w-[800px]'>
+          <h1 className="text-3xl font-bold">Community-focussed Minecraft servers since 2020.</h1>
+          <p>Beautiful builds, engaging roleplay, and a tight-knit group of friends make for incredibly memorable servers every time.</p>
+        </div>
+      </section>
+      <section className="bg-[#13171b] text-white py-16 px-8 flex justify-center">
+        <div className="flex flex-col sm:flex-row gap-8 items-center max-w-[800px] text-center sm:text-left">
+          <img src="/icons/ostrich.png" alt="Ostrich Icon"/>
+          <div>
+            <h2 className="text-3xl font-bold">OstrichCraft is now live!</h2>
+            <p className="text-lg mb-6">Our latest Minecraft server is an epic journey into the wild west.</p>
+            <Link href="/ostrichcraft" className="inline-block bg-[#1f262b] border border-white/20 px-6 py-3 font-semibold hover:bg-[#2a3238] transition-colors">
+              Explore OstrichCraft
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
